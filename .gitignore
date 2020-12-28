@@ -1,0 +1,8 @@
+# PDDL planner specific
+FF-v2.3/
+FD/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
