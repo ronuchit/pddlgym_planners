@@ -30,14 +30,30 @@ class FF(PDDLPlanner):
         return cmd_str
 
     def _output_to_plan(self, output):
-        num_node_expansions = re.findall(
-            r"evaluating (.+) states", output.lower())
+        num_node_expansions = re.findall(r"evaluating (.+) states", output.lower())
+        total_time = re.findall(r"(\d+\.\d+) seconds total time", output.lower())
+        search_time = re.findall(r"(\d+\.\d+) seconds total time", output.lower())
         if "num_node_expansions" not in self._statistics:
             self._statistics["num_node_expansions"] = 0
         if len(num_node_expansions) == 1:
             assert int(num_node_expansions[0]) == float(num_node_expansions[0])
             self._statistics["num_node_expansions"] += int(
                 num_node_expansions[0])
+        if "found legal plan" in output:
+            plan_length = re.findall(r"(\d+):", output.lower())
+            self._statistics["plan_length"] = len(plan_length)
+        if len(total_time) == 1:
+            try: 
+                total_time_float = float(total_time[0])
+                self._statistics["total_time"] = total_time_float
+            except:
+                raise PlanningFailure("Error on output's total time format: {}".format(total_time[0]))
+        if len(search_time) == 1:
+            try: 
+                search_time_float = float(search_time[0])
+                self._statistics["search_time"] = search_time_float
+            except:
+                raise PlanningFailure("Error on output's search time format: {}".format(search_time[0]))
         if "goal can be simplified to FALSE" in output:
             raise PlanningFailure("Plan not found with FF! Error: {}".format(
                 output))
