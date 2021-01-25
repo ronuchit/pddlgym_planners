@@ -9,7 +9,7 @@ from pddlgym_planners.pddl_planner import PDDLPlanner
 from pddlgym_planners.planner import PlanningFailure
 
 FF_URL = "https://fai.cs.uni-saarland.de/hoffmann/ff/FF-v2.3.tgz"
-FF_MAC_URL = "git@github.com:ronuchit/FF.git"
+FF_MAC_URL = "https://github.com/ronuchit/FF.git"
 
 
 class FF(PDDLPlanner):
