@@ -10,11 +10,11 @@ def test_planners():
     succeed in the environments
     """
     planners = [FF(), FD(), FD(alias_flag="--alias lama-first")]
-    envs = ["PDDLEnvBlocks-v0", "PDDLEnvBlocks_operator_actions-v0"]
+    env_names = ["PDDLEnvBlocks-v0", "PDDLEnvBlocks_operator_actions-v0"]
 
     for planner in planners:
-        for env in envs:
-            env = pddlgym.make("PDDLEnvBlocks-v0")
+        for env_name in env_names:
+            env = pddlgym.make(env_name)
             state, _ = env.reset()
             plan = planner(env.domain, state)
             for act in plan:
