@@ -11,7 +11,8 @@ This repository has been mostly tested on MacOS Mojave and Catalina with Python 
 ## Installation
 
 1. Install [PDDLGym](https://github.com/tomsilver/pddlgym).
-2. Clone this repository.
+2. If on MacOS, `brew install coreutils`.
+3. Clone this repository.
 
 ## Example Usage
 
