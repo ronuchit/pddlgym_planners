@@ -13,7 +13,7 @@ class Planner:
 
     @abc.abstractmethod
     def __call__(self, domain, state, horizon=np.inf, timeout=10,
-                 return_files=False):
+                 return_files=False, translate_separately=False):
         """Takes in a PDDLGym domain and PDDLGym state. Returns a plan.
         Note that the state already contains the goal, accessible via
         `state.goal`. The domain for an env is given by `env.domain`.

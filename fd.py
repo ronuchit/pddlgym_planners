@@ -39,6 +39,13 @@ class FD(PDDLPlanner):
             dom_file, prob_file, self._final_flags)
         return cmd_str
 
+    def _get_cmd_str_searchonly(self, sas_file, timeout):
+        timeout_cmd = "gtimeout" if sys.platform == "darwin" else "timeout"
+        cmd_str = "{} {} {} {} --search {} {}".format(
+            timeout_cmd, timeout, self._exec, self._alias_flag,
+            sas_file, self._final_flags)
+        return cmd_str
+
     def _cleanup(self):
         """Run FD cleanup
         """

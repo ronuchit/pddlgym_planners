@@ -29,6 +29,9 @@ class FF(PDDLPlanner):
             timeout_cmd, timeout, self._exec, dom_file, prob_file)
         return cmd_str
 
+    def _get_cmd_str_searchonly(self, sas_file, timeout):
+        raise NotImplementedError("Cannot run translate_separately=True for FF")
+
     def _output_to_plan(self, output):
         num_node_expansions = re.findall(r"evaluating (.+) states", output.lower())
         total_time = re.findall(r"(\d+\.\d+) seconds total time", output.lower())
