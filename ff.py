@@ -81,7 +81,7 @@ class FF(PDDLPlanner):
             os.system("curl {} --output temp_ff_install.tgz".format(FF_URL))
             os.system("mkdir {}".format(loc))
             os.system("tar -xzvf temp_ff_install.tgz -C {} --strip-components 1".format(loc))
-            os.system("rm ff.tgz")
+            os.system("rm temp_ff_install.tgz")
         # Compile FF.
         os.system("cd {} && make && cd -".format(loc))
         assert os.path.exists(self._exec)
