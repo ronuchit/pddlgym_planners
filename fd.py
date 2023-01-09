@@ -10,7 +10,7 @@ import tempfile
 from pddlgym_planners.pddl_planner import PDDLPlanner
 from pddlgym_planners.planner import PlanningFailure
 
-FD_URL = "https://github.com/ronuchit/downward.git"
+FD_URL = "https://github.com/aibasel/downward.git"
 
 
 class FD(PDDLPlanner):
