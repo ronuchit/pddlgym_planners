@@ -18,7 +18,7 @@ def test_planners():
             state, _ = env.reset()
             plan = planner(env.domain, state)
             for act in plan:
-                _, reward, done, _ = env.step(act)
+                _, reward, done, _, _ = env.step(act)
             assert reward == 1.
             assert done
 
