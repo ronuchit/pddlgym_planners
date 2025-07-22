@@ -1,6 +1,6 @@
 # Planner Interface for [PDDLGym](https://github.com/tomsilver/pddlgym)
 
-**This library is under development by [Tom Silver](http://web.mit.edu/tslvr/www/) and [Rohan Chitnis](https://rohanchitnis.com/). Correspondence: <tslvr@mit.edu> and <ronuchit@gmail.com>.**
+**This library is under development by [Tom Silver](https://tomsilver.github.io/) and [Rohan Chitnis](https://rohanchitnis.com/). Correspondence: <tomssilver@gmail.com> and <ronuchit@gmail.com>.**
 
 This is a lightweight Python interface for using off-the-shelf classical planners like [FastForward](https://fai.cs.uni-saarland.de/hoffmann/ff.html) and [FastDownward](http://www.fast-downward.org/ObtainingAndRunningFastDownward) with [PDDLGym](https://github.com/tomsilver/pddlgym).
 
